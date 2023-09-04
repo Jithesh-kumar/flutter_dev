@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/pages/home.dart';
+import 'package:login_app/screens/epo.dart';
+//import 'package:login_app/screens/epo.dart';
 
 class DashBoard extends StatefulWidget {
   @override
@@ -44,16 +47,6 @@ class _DashBoardState extends State<DashBoard> {
             backgroundImage: ExactAssetImage('assets/images/pro1.png'),
           ),
         ),
-        actions: <Widget>[
-          const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Icon(
-              Icons.menu,
-              color: Colors.white,
-              size: 30,
-            ),
-          )
-        ],
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -116,17 +109,25 @@ class _DashBoardState extends State<DashBoard> {
                       const SizedBox(
                         width: 16,
                       ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: const Color(0xAA373C3C),
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: const Icon(
-                          Icons.keyboard_double_arrow_right_outlined,
-                          size: 28,
-                          color: Color(0xFFD0DCDE),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => StarterPage()));
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: const Color(0xAA373C3C),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          child: const Icon(
+                            Icons.keyboard_double_arrow_right_outlined,
+                            size: 28,
+                            color: Color(0xFFD0DCDE),
+                          ),
                         ),
                       ),
                     ],
@@ -222,7 +223,6 @@ class _DashBoardState extends State<DashBoard> {
                       image: "assets/images/w2.jpg",
                       title: "Chest Muscle\nExercise",
                     ),
-                    // Added "Chest Muscle Exercise" section
                   ],
                 )
               ],
@@ -256,7 +256,7 @@ class _DashBoardState extends State<DashBoard> {
                 Colors.black.withOpacity(0.6),
                 Colors.black.withOpacity(0.6),
                 Colors.black.withOpacity(0.4),
-                Colors.black.withOpacity(.0),
+                Colors.black.withOpacity(.4),
               ],
             ),
           ),

@@ -12,7 +12,7 @@ void main() {
     //theme: ThemeData(fontFamily: 'Roboto'),
     //initialRoute: 'login',
     routes: {
-      'login': (context) => Mylogin(),
+      'login': (context) => MyLogin(),
       'register': (context) => MyRegister(),
       'home': (context) => HomePage(),
       //'ad': (context) => MyForm(),
