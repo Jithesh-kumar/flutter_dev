@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/Timeline/Date_timeline.dart';
+//import 'package:login_app/components/flip.dart';
+import 'package:login_app/components/timline_home.dart';
+import 'package:login_app/widget/user_ui.dart';
+//import 'package:login_app/model/FadeAnimation.dart';
+import 'package:login_app/widget/widget_home/home_screen.dart';
+import 'package:login_app/widget/widget_home/welcome_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -39,28 +46,48 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.favorite),
             title: const Text('Favorites'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PlantScreen(),
+                  ));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.person),
             title: const Text('Friends'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => UserProfile()));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.share),
             title: const Text('Share'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TimeLine()),
+              );
+            },
           ),
           ListTile(
             leading: const Icon(Icons.notifications),
             title: const Text('Request'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => WelcomeScreen()));
+            },
           ),
           const Divider(),
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => TimelineComponent()));
+            },
           ),
           ListTile(
             leading: const Icon(Icons.description),

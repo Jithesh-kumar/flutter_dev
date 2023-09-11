@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/pages/home.dart';
 
 class StarterPage extends StatefulWidget {
   const StarterPage({super.key});
@@ -39,6 +40,13 @@ class _StarterPageState extends State<StarterPage>
     setState(() {
       _textVisible = false;
     });
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) {
+          return HomePage();
+        },
+      ),
+    );
   }
 
   @override

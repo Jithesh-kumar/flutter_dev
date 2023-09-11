@@ -1,6 +1,4 @@
-
 // import 'package:flutter/material.dart';
-// import 'package:simple_animations/simple_animations.dart';
 
 // class FadeAnimation extends StatelessWidget {
 //   final double delay;
@@ -10,24 +8,22 @@
 
 //   @override
 //   Widget build(BuildContext context) {
-//     final tween = MultiTrackTween([
-//       Track("opacity").add(Duration(milliseconds: 500), Tween(begin: 0.0, end: 1.0)),
-//       Track("translateY").add(
-//         Duration(milliseconds: 500), Tween(begin: -30.0, end: 0.0),
-//         curve: Curves.easeOut)
-//     ]);
-
-//     return ControlledAnimation(
-//       delay: Duration(milliseconds: (500 * delay).round()),
-//       duration: tween.duration,
-//       tween: tween,
-//       child: child,
-//       builderWithChild: (context, child, animation) => Opacity(
-//         opacity: animation["opacity"],
-//         child: Transform.translate(
-//           offset: Offset(0, animation["translateY"]), 
-//           child: child
-//         ),
+//     return TweenAnimationBuilder(
+//       duration: Duration(milliseconds: 500),
+//       curve: Curves.easeInOut,
+//       tween: Tween<double>(begin: 1.0, end: 0.0),
+//       builder: (context, double opacity, child) {
+//         return Opacity(
+//           opacity: opacity,
+//           child: child,
+//         );
+//       },
+//       child: FutureBuilder(
+//         // Ensure the child widget is built only once.
+//         future: Future.delayed(Duration(milliseconds: (500 * delay).round())),
+//         builder: (context, snapshot) {
+//           return child;
+//         },
 //       ),
 //     );
 //   }
